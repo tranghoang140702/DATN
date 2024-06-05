@@ -1,0 +1,1486 @@
+{
+	"info": {
+		"_postman_id": "dfbba2b9-83f1-40bc-8f51-296399fc64c0",
+		"name": "API Fika",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28242522"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"admin\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/login",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the first person's name is Tâm \"),\r",
+									"    function() {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData[0].nam).to.eql(\"Tâm\");\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "/*/"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "{{urlfika}}/auth",
+							"host": [
+								"{{urlfika}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth/list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/list",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/6616629b5f3e766aed1f9f94",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"6616629b5f3e766aed1f9f94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth/signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"environment to be production\", function () {\r",
+									"pm.expect(pm.environment.get(\"token\")).to.equal\r",
+									"(pm.variables.get(\"token\")); });\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ3ODgyNDYsImV4cCI6MTc0NTg5MjI0Nn0.LGTgfFLS749rqEwuwFAHFBK6pihNzO3jA7aqpwr0HKU"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Mai Huy23\",\r\n  \"role\": \"Admin\",\r\n  \"password\": \"12345678\",\r\n  \"full_name\": \"Mai Huy Dz\",\r\n  \"description\": \"NV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlfika}}/auth/signup",
+							"host": [
+								"{{urlfika}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ3ODgyNDYsImV4cCI6MTc0NTg5MjI0Nn0.LGTgfFLS749rqEwuwFAHFBK6pihNzO3jA7aqpwr0HKU"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/663ddc32fd8d80a712e39d02\n",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"663ddc32fd8d80a712e39d02\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/auth/account/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ3ODgyNDYsImV4cCI6MTc0NTg5MjI0Nn0.LGTgfFLS749rqEwuwFAHFBK6pihNzO3jA7aqpwr0HKU"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tâm\",\r\n  \"role\": \"Admin\",\r\n  \"full_name\": \"Việt Tâm\",\r\n  \"description\": \"NV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/account/660e3254902134f6c38f90fc",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"account",
+								"660e3254902134f6c38f90fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login//auth/account/change_password/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ3ODgyNDYsImV4cCI6MTc0NTg5MjI0Nn0.LGTgfFLS749rqEwuwFAHFBK6pihNzO3jA7aqpwr0HKU"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"88888888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/auth/account/change_password/66359b90b666416727e40431",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"auth",
+								"account",
+								"change_password",
+								"66359b90b666416727e40431"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get/role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check the first person's name is Admin \"),\r",
+									"    function() {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData[0].nam).to.eql(\"Admin\");\r",
+									"};"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/role",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post/role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"name\", \"Hải -\"+parseInt(Math.random().toString(9).substring(2,7)));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"describe\": \"NV1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/role",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post/role/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/role/662875bab53d262d03bdd66f",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"role",
+								"662875bab53d262d03bdd66f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch/role/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Vũ Thị Hồng\",\r\n  \"describe\": \"Nhân viên \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/role/662875d4b53d262d03bdd671",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"role",
+								"662875d4b53d262d03bdd671"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete/role/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/role/6643a4defd8d80a712e3adac",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"role",
+								"6643a4defd8d80a712e3adac"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "mission/history/download",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history/download",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mission_code\": \"NV1\",\r\n  \"robot_code\": \"robot1\",\r\n  \"pickup_location\": \"vị trí 2\",\r\n  \"return_location\": \"vị trí c2\",\r\n  \"sector\": \"Pallet\",\r\n  \"object_call\": \"2024-05-015T03:43:30\",\r\n  \"current_state\": \"registered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history/list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history/list",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history/dal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history/dal",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history",
+								"dal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history/6629fdc73599e25f9553d235",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history",
+								"6629fdc73599e25f9553d235"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mission/history/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/mission_history/6643a4dffd8d80a712e3adc4",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"mission_history",
+								"6643a4dffd8d80a712e3adc4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "setting/system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setting/system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tham số 99\",\r\n  \"value\": \"Đạt tốt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setting/system",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system/list",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setting/system/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system/662a02d53599e25f9553d5dc",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system",
+								"662a02d53599e25f9553d5dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setting/system/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tỷ lên inspection\",\r\n  \"value\": \"60s\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system/662a02d53599e25f9553d5dc",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system",
+								"662a02d53599e25f9553d5dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setting/system/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MTQ2MjE4MDgsImV4cCI6MTc0NTcyNTgwOH0.aZ_GA3m7E40uGt3Qe5dCw0tV69d2GX4crZycOOMAsV4"
+							}
+						],
+						"url": {
+							"raw": "http://4.145.80.147:3100/setting_system/6643a4e0fd8d80a712e3ade4",
+							"protocol": "http",
+							"host": [
+								"4",
+								"145",
+								"80",
+								"147"
+							],
+							"port": "3100",
+							"path": [
+								"setting_system",
+								"6643a4e0fd8d80a712e3ade4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlfika",
+			"value": "http://4.145.80.147:3100",
+			"type": "string"
+		}
+	]
+}
